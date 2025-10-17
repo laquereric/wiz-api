@@ -1,0 +1,46 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://auth.app.wiz.io/oauth/token
+    body:
+      encoding: US-ASCII
+      string: grant_type=client_credentials&client_id=<CLIENT_ID>&client_secret=<CLIENT_SECRET>&audience=wiz-api
+    headers:
+      User-Agent:
+      - Faraday v2.14.0
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Date:
+      - Fri, 17 Oct 2025 15:58:20 GMT
+      Content-Type:
+      - text/plain; charset=utf-8
+      Content-Length:
+      - '12'
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - wiz-session-id=bae87d46-b636-4a68-b08f-c69f4124ff9d; Path=/api; Domain=auth.app.wiz.io;
+        Max-Age=300; HttpOnly; Secure; SameSite=Lax
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Xss-Protection:
+      - 1; mode=block
+    body:
+      encoding: UTF-8
+      string: Unauthorized
+  recorded_at: Fri, 17 Oct 2025 15:58:20 GMT
+recorded_with: VCR 6.3.1
